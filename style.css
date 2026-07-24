@@ -673,4 +673,33 @@ footer{
 
 }
 
+.hero h1{
+  letter-spacing:-1.5px
+}
 
+
+/* yahan se Related Articles CSS start */
+
+.related-articles{
+  margin-top:50px;
+  padding:30px 0;
+}
+
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.related-card{
+  display:block;
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:#fff;
+  transition:.2s;
+}
+
+.related-card:hover{
+  transform:translateY(-5px);
+}
