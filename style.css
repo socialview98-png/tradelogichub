@@ -703,3 +703,39 @@ footer{
 .related-card:hover{
   transform:translateY(-5px);
 }
+
+
+
+.related-card i{
+  font-size:28px;
+  color:#2563eb;
+  margin-bottom:15px;
+}
+
+
+.related-card h3{
+  color:var(--ink);
+  font-size:1.1rem;
+  margin-bottom:10px;
+}
+
+
+.related-card p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.6;
+}
+
+
+.related-card:hover{
+  box-shadow:0 12px 30px rgba(27,63,125,.12);
+}
+
+
+@media(max-width:760px){
+
+.related-grid{
+  grid-template-columns:1fr;
+}
+
+}
