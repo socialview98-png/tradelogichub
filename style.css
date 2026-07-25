@@ -739,3 +739,51 @@ footer{
 }
 
 }
+
+
+/* ===== Trading Categories ===== */
+
+.categories{
+  background:#f8fbff;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:22px;
+  margin-top:40px;
+}
+
+.category-card{
+  background:#fff;
+  border:1px solid #e4e9f3;
+  border-radius:14px;
+  padding:28px 22px;
+  text-align:center;
+  transition:.3s;
+  box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.category-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(37,99,235,.15);
+  border-color:#2563eb;
+}
+
+.category-card i{
+  font-size:36px;
+  color:#2563eb;
+  margin-bottom:18px;
+}
+
+.category-card h3{
+  font-size:20px;
+  margin-bottom:10px;
+  color:#17213a;
+}
+
+.category-card p{
+  font-size:15px;
+  color:#63708a;
+  line-height:1.6;
+}
