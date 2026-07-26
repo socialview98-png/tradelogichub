@@ -452,15 +452,15 @@ a{
 }
 
 .article-icon{
-  height:48px;
-  width:48px;
+  height:58px;
+  width:58px;
   display:grid;
   place-items:center;
-  border-radius:11px;
-  background:#edf3ff;
-  color:#2361d9;
-  font-size:1.25rem;
-  margin-bottom:20px
+  border-radius:16px;
+  background:linear-gradient(135deg,#2563eb,#4f8cff);
+  color:#fff;
+  font-size:1.45rem;
+  margin-bottom:22px
 }
 
 .tag{
