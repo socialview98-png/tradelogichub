@@ -324,15 +324,18 @@ a{
 
 .feature-card,.tool-card,.article-card{
   border:1px solid var(--line);
-  border-radius:13px;
-  padding:28px;
+  border-radius:18px;
+  padding:30px;
   background:#fff;
-  transition:.2s
+  transition:.3s ease;
+  box-shadow:0 8px 24px rgba(15,31,61,.06);
 }
 
 .feature-card:hover,.tool-card:hover,.article-card:hover{
   transform:translateY(-5px);
-  box-shadow:0 16px 35px rgba(27,63,125,.1)
+  box-shadow:0 22px 45px rgba(37,99,235,.16)
+   border-color:#2563eb;
+  
 }
 
 .icon-wrap{
