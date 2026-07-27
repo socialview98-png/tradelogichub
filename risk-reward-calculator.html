@@ -8,11 +8,9 @@
 
 <title>Risk Reward Calculator | Trade Logic Hub</title>
 
-<meta name="description" content="Calculate Risk Reward Ratio, Position Size and Trading Risk Management with Trade Logic Hub Smart Calculator.">
+<meta name="description" content="Free Risk Reward Calculator for traders. Calculate risk, reward and risk reward ratio before entering a trade.">
 
 <link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet" href="calculator.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -33,16 +31,35 @@ Trading Tool
 
 
 <h1>
-Smart Risk & Position Size Calculator
+Risk Reward Calculator
 </h1>
 
 
 <p class="article-subtitle">
-
-Plan your trade before entering the market.
-Calculate Risk, Reward, Risk Reward Ratio and Position Size easily.
-
+Calculate your potential risk, reward and risk reward ratio before taking any trade. A simple tool designed for disciplined traders.
 </p>
+
+
+<div class="article-meta">
+
+<span>
+<i class="fa-solid fa-shield-halved"></i>
+Risk Management
+</span>
+
+
+<span>
+<i class="fa-solid fa-user-graduate"></i>
+Beginner Friendly
+</span>
+
+
+<span>
+<i class="fa-solid fa-chart-line"></i>
+Trading Education
+</span>
+
+</div>
 
 
 </div>
@@ -51,90 +68,69 @@ Calculate Risk, Reward, Risk Reward Ratio and Position Size easily.
 
 
 
-<main class="calculator-page">
+<main class="article-page">
 
 
 <div class="container">
 
 
-
-<section class="calculator-card">
+<section class="calculator-box">
 
 
 <h2>
-<i class="fa-solid fa-chart-line"></i>
-Trade Calculator
+<i class="fa-solid fa-calculator"></i>
+Calculate Your Risk Reward
 </h2>
 
 
-
-<div class="input-grid">
-
-
-<div>
-<label>
-Trading Capital
-</label>
-
-<input type="number" id="capital" placeholder="Enter capital">
-
-</div>
+<div class="calculator-grid">
 
 
+<div class="input-group">
 
-<div>
-<label>
-Risk Percentage (%)
-</label>
-
-<input type="number" id="riskPercent" placeholder="Example 2">
-
-</div>
-
-
-
-<div>
 <label>
 Entry Price
 </label>
 
-<input type="number" id="entry" placeholder="Entry price">
+<input type="number" id="entry" placeholder="Example: 500">
 
 </div>
 
 
 
-<div>
+<div class="input-group">
+
 <label>
 Stop Loss Price
 </label>
 
-<input type="number" id="stopLoss" placeholder="Stop loss">
+<input type="number" id="stoploss" placeholder="Example: 490">
 
 </div>
 
 
 
-<div>
+<div class="input-group">
+
 <label>
 Target Price
 </label>
 
-<input type="number" id="target" placeholder="Target price">
+<input type="number" id="target" placeholder="Example: 520">
 
 </div>
 
 
+
 </div>
 
 
+<button class="btn btn-primary" onclick="calculateRR()">
 
-<button class="calculate-btn" onclick="calculateTrade()">
-
-Calculate Trade Plan
+<i class="fa-solid fa-chart-line"></i>
+Calculate
 
 </button>
-
 
 
 
@@ -142,31 +138,200 @@ Calculate Trade Plan
 
 
 <h3>
-Your Trade Plan
+Result
 </h3>
 
 
-<p id="riskAmount">
-Risk Amount: -
+<p>
+Risk:
+<span id="risk">0</span>
 </p>
 
 
-<p id="rewardAmount">
-Reward Amount: -
+<p>
+Reward:
+<span id="reward">0</span>
 </p>
 
 
-<p id="ratio">
-Risk Reward Ratio: -
-</p>
-
-
-<p id="quantity">
-Maximum Quantity: -
+<p>
+Risk Reward Ratio:
+<span id="ratio">0</span>
 </p>
 
 
 </div>
+
+
+
+</section>
+
+  <section class="calculator-info">
+
+<h2>
+<i class="fa-solid fa-circle-info"></i>
+Risk Reward Calculator Kya Hai?
+</h2>
+
+
+<p>
+Risk Reward Calculator ek trading tool hai jo trader ko trade lene se pehle ye samajhne mein help karta hai ki wo kitna risk le raha hai aur uske badle potential reward kitna ho sakta hai.
+</p>
+
+
+<p>
+Professional traders aksar trade enter karne se pehle apna entry price, stop loss aur target decide karte hain taaki risk ko control kiya ja sake.
+</p>
+
+
+
+<h3>
+Risk Reward Ratio kya hota hai?
+</h3>
+
+
+<p>
+Risk Reward Ratio batata hai ki ek trade mein possible loss ke comparison mein expected profit kitna hai.
+</p>
+
+
+<p>
+Example:
+Agar aap kisi trade mein ₹10 ka risk le rahe hain aur possible reward ₹20 hai, to Risk Reward Ratio 1:2 hoga.
+</p>
+
+
+</section>
+
+
+
+
+<section class="calculator-info">
+
+
+<h2>
+<i class="fa-solid fa-list-check"></i>
+Calculator Kaise Use Kare?
+</h2>
+
+
+<div class="step-box">
+
+
+<h3>
+Step 1 — Entry Price Dale
+</h3>
+
+<p>
+Jis price par aap trade enter karna chahte hain, wo entry price box mein dale.
+</p>
+
+
+</div>
+
+
+
+<div class="step-box">
+
+
+<h3>
+Step 2 — Stop Loss Dale
+</h3>
+
+<p>
+Wo price dale jahan aap maximum loss ko limit karna chahte hain.
+</p>
+
+
+</div>
+
+
+
+<div class="step-box">
+
+
+<h3>
+Step 3 — Target Price Dale
+</h3>
+
+<p>
+Apna expected profit target enter kare aur Calculate button press kare.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="calculator-info">
+
+
+<h2>
+<i class="fa-solid fa-lightbulb"></i>
+Example
+</h2>
+
+
+<p>
+Maan lijiye:
+</p>
+
+
+<ul>
+
+<li>Entry Price = ₹500</li>
+
+<li>Stop Loss = ₹490</li>
+
+<li>Target Price = ₹520</li>
+
+</ul>
+
+
+<p>
+Is trade mein risk ₹10 hai aur reward ₹20 hai.
+Isliye Risk Reward Ratio 1:2 hoga.
+</p>
+
+
+</section>
+
+  <section class="calculator-info">
+
+
+<h2>
+<i class="fa-solid fa-triangle-exclamation"></i>
+Common Trading Mistakes
+</h2>
+
+
+<ul>
+
+<li>
+Trade lene se pehle risk calculate na karna.
+</li>
+
+<li>
+Bina Stop Loss ke trading karna.
+</li>
+
+<li>
+Sirf profit ke baare mein sochna aur risk ignore karna.
+</li>
+
+<li>
+Ek hi trade mein bahut zyada capital lagana.
+</li>
+
+<li>
+Emotion mein aakar trading decisions lena.
+</li>
+
+</ul>
 
 
 </section>
@@ -179,50 +344,105 @@ Maximum Quantity: -
 
 
 <h2>
-<i class="fa-solid fa-circle-info"></i>
-How To Use This Calculator?
+<i class="fa-solid fa-star"></i>
+Risk Management Tips
+</h2>
+
+
+<ul>
+
+<li>
+Har trade se pehle Entry, Stop Loss aur Target decide kare.
+</li>
+
+<li>
+Risk Reward Ratio ko samajhkar trade plan banaye.
+</li>
+
+<li>
+Apne trading capital ko protect karna priority rakhe.
+</li>
+
+<li>
+Trading journal maintain kare aur mistakes se seekhe.
+</li>
+
+</ul>
+
+
+</section>
+
+
+
+
+
+<section class="calculator-info">
+
+
+<h2>
+<i class="fa-solid fa-circle-question"></i>
+Frequently Asked Questions
 </h2>
 
 
 
 <h3>
-1. Trading Capital
+1. Risk Reward Ratio kya hota hai?
 </h3>
 
 <p>
-Enter the total money you are planning to use for trading.
+Risk Reward Ratio possible loss aur possible profit ke beech ka comparison hota hai.
 </p>
 
 
 
 <h3>
-2. Risk Percentage
+2. Kya high Risk Reward Ratio hamesha better hota hai?
 </h3>
 
 <p>
-Enter how much percentage of your capital you are willing to risk on one trade.
+Nahi. Ratio ke saath trading strategy, accuracy aur risk management bhi important hote hain.
 </p>
 
 
 
 <h3>
-3. Entry, Stop Loss & Target
+3. Kya ye calculator buy ya sell signal deta hai?
 </h3>
 
 <p>
-Enter your planned trade levels to calculate possible risk and reward.
+Nahi. Ye sirf risk aur reward calculate karne mein help karta hai. Ye koi trading recommendation nahi deta.
 </p>
 
 
 
 <h3>
-4. Position Size
+4. Beginners ke liye Risk Reward Calculator useful hai?
 </h3>
 
 <p>
-Calculator will help you understand how many shares you can consider according to your risk.
+Haan, beginners ko trade lene se pehle apna risk samajhne mein help mil sakti hai.
 </p>
 
+
+</section>
+
+
+
+
+
+<section class="calculator-info disclaimer-box">
+
+
+<h2>
+<i class="fa-solid fa-shield-halved"></i>
+Disclaimer
+</h2>
+
+
+<p>
+Ye calculator sirf educational purpose ke liye banaya gaya hai. Stock market trading mein risk hota hai. Koi bhi trade lene se pehle apni research aur risk management zaroor kare.
+</p>
 
 
 </section>
@@ -244,48 +464,12 @@ Back to Home
 </div>
 
 
-
-
 </div>
 
-<section class="calculator-info">
-
-<div class="container">
-
-<h2>
-<i class="fa-solid fa-circle-info"></i>
-Risk Reward Calculator Kya Hai?
-</h2>
-
-<p>
-Risk Reward Calculator ek trading tool hai jo trader ko ye samajhne mein help karta hai ki kisi trade mein kitna risk liya ja raha hai aur potential reward kitna ho sakta hai.
-</p>
-
-<p>
-Trade lene se pehle agar trader apna entry price, stop loss aur target price calculate kar leta hai, to wo better risk management decision le sakta hai.
-</p>
-
-<h3>
-Risk Reward Ratio kya hota hai?
-</h3>
-
-<p>
-Risk Reward Ratio batata hai ki trader kitne risk ke badle kitna possible reward expect kar raha hai.
-</p>
-
-<p>
-Example: Agar kisi trade mein aap $10 ka risk le rahe hain aur possible profit $20 hai, to Risk Reward Ratio 1:2 hoga.
-</p>
-
-</div>
-
-</section>
-  
 </main>
 
 
-
-<script src="calculator.js"></script>
+<script src="script.js"></script>
 
 
 </body>
