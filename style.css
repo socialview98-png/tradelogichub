@@ -865,3 +865,46 @@ footer{
   gap:8px;
 }
 
+/* ===== Introduction Card ===== */
+
+.article-intro{
+    padding:45px 0;
+}
+
+.intro-card{
+    background:#fff;
+    border:1px solid #e4e9f3;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(15,31,61,.08);
+}
+
+.intro-card h2{
+    color:#0f1f3d;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.intro-card h2 i{
+    color:#2563eb;
+    margin-right:10px;
+}
+
+.intro-card h3{
+    margin-top:25px;
+    margin-bottom:15px;
+    color:#0f1f3d;
+}
+
+.intro-card p{
+    margin-bottom:16px;
+    line-height:1.9;
+}
+
+.intro-card ul{
+    padding-left:22px;
+}
+
+.intro-card li{
+    margin-bottom:10px;
+}
