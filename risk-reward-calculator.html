@@ -1,1 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Risk Reward Calculator | Free Trading Calculator | TradeLogicHub</title>
+
+<meta name="description" content="Free Risk Reward Ratio Calculator for traders. Calculate risk, reward and Risk Reward Ratio instantly with Entry Price, Stop Loss and Target Price.">
+
+<meta name="keywords" content="Risk Reward Calculator, Trading Calculator, Risk Reward Ratio, Stop Loss Calculator, TradeLogicHub">
+
+<meta name="author" content="TradeLogicHub">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="article-header">
+
+<div class="container">
+
+<p class="article-tag">
+
+<i class="fa-solid fa-calculator"></i>
+
+Trading Tool
+
+</p>
+
+<h1>Risk Reward Calculator</h1>
+
+<p class="article-subtitle">
+
+Calculate your trading risk, reward and Risk Reward Ratio before entering any trade.
+
+A good trader always plans the trade first and enters later.
+
+</p>
+
+<div class="article-meta">
+
+<span>
+
+<i class="fa-solid fa-clock"></i>
+
+Instant Calculation
+
+</span>
+
+<span>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+100% Free Tool
+
+</span>
+
+<span>
+
+<i class="fa-solid fa-chart-line"></i>
+
+Beginner Friendly
+
+</span>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= MAIN ================= -->
+
+<main class="article-page">
+
+<div class="container">
+
+<!-- ================= INTRODUCTION ================= -->
+
+<section class="article-intro">
+
+<div class="intro-card">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+What is Risk Reward Ratio?
+
+</h2>
+
+<p>
+
+Risk Reward Ratio ek important trading concept hai jo batata hai ki
+
+aap ek trade me kitna risk le rahe hain aur uske badle kitna reward expect kar rahe hain.
+
+</p>
+
+<p>
+
+Professional traders kabhi bhi bina Risk Reward calculate kiye trade enter nahi karte.
+
+Ye tool aapko sirf kuch seconds me calculation karke dega.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= CALCULATOR ================= -->
+
+<section class="calculator-section">
+
+<div class="calculator-card">
+
+<h2>
+
+<i class="fa-solid fa-calculator"></i>
+
+Risk Reward Calculator
+
+</h2>
+
+<p class="calculator-text">
+
+Enter your trade details below.
+
+</p>
+
+<div class="input-group">
+
+<label>
+
+Entry Price
+
+</label>
+
+<input
+type="number"
+id="entryPrice"
+placeholder="Example : 100">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Stop Loss
+
+</label>
+
+<input
+type="number"
+id="stopLoss"
+placeholder="Example : 95">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Target Price
+
+</label>
+
+<input
+type="number"
+id="targetPrice"
+placeholder="Example : 115">
+
+</div>
+
+<button
+class="calculate-btn"
+onclick="calculateRiskReward()">
+
+<i class="fa-solid fa-calculator"></i>
+
+Calculate
+
+</button>
+
+<button
+class="reset-btn"
+onclick="resetCalculator()">
+
+<i class="fa-solid fa-rotate-left"></i>
+
+Reset
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= RESULT ================= -->
+
+<section class="result-section">
+
+<h2>
+
+<i class="fa-solid fa-chart-column"></i>
+
+Calculation Result
+
+</h2>
+
+<div class="result-grid">
+
+<div class="result-box risk-box">
+
+<h3>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Risk
+
+</h3>
+
+<p id="riskResult">
+
+₹0
+
+</p>
+
+</div>
+
+<div class="result-box reward-box">
+
+<h3>
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+Reward
+
+</h3>
+
+<p id="rewardResult">
+
+₹0
+
+</p>
+
+</div>
+
+<div class="result-box ratio-box">
+
+<h3>
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+Risk Reward Ratio
+
+</h3>
+
+<p id="ratioResult">
+
+0 : 0
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- ================= FORMULA ================= -->
+
+<section>
+
+<h2>
+
+<i class="fa-solid fa-square-root-variable"></i>
+
+Risk Reward Formula
+
+</h2>
+
+<p>
+
+Risk Reward Ratio calculate karne ke liye sirf do simple formulas use hote hain.
+
+</p>
+
+<div class="formula-card">
+
+<p>
+
+<strong>Risk = Entry Price − Stop Loss</strong>
+
+</p>
+
+<p>
+
+<strong>Reward = Target Price − Entry Price</strong>
+
+</p>
+
+<p>
+
+<strong>Risk Reward Ratio = Reward ÷ Risk</strong>
+
+</p>
+
+</div>
+
+<p>
+
+Professional traders generally pehle Risk aur Reward calculate karte hain, uske baad hi trade enter karte hain.
+
+</p>
+
+</section>
+
+<!-- ================= EXAMPLE ================= -->
+
+<section>
+
+<h2>
+
+<i class="fa-solid fa-lightbulb"></i>
+
+Example Calculation
+
+</h2>
+
+<div class="example-card">
+
+<p>
+
+<strong>Entry Price :</strong> ₹100
+
+</p>
+
+<p>
+
+<strong>Stop Loss :</strong> ₹95
+
+</p>
+
+<p>
+
+<strong>Target :</strong> ₹115
+
+</p>
+
+<hr>
+
+<p>
+
+Risk = ₹5
+
+</p>
+
+<p>
+
+Reward = ₹15
+
+</p>
+
+<p>
+
+Risk Reward Ratio = 1 : 3
+
+</p>
+
+</div>
+
+<p>
+
+Is example me trader sirf ₹5 ka risk lekar ₹15 ka reward expect kar raha hai.
+
+</p>
+
+</section>
+
+<!-- ================= BEST RISK REWARD ================= -->
+
+<section>
+
+<h2>
+
+<i class="fa-solid fa-medal"></i>
+
+What is a Good Risk Reward Ratio?
+
+</h2>
+
+<p>
+
+Har strategy alag hoti hai, lekin kai traders generally 1:2 ya usse better Risk Reward Ratio ko prefer karte hain.
+
+</p>
+
+<ul>
+
+<li>1 : 1 → Minimum</li>
+
+<li>1 : 2 → Good</li>
+
+<li>1 : 3 → Very Good</li>
+
+<li>1 : 4+ → Excellent (agar strategy support kare)</li>
+
+</ul>
+
+<p>
+
+High Risk Reward Ratio hone se bhi profit guarantee nahi hota. Trade quality aur strategy equally important hoti hai.
+
+</p>
+
+</section>
+
+<!-- ================= WHY IMPORTANT ================= -->
+
+<section>
+
+<h2>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Why Risk Reward Ratio is Important?
+
+</h2>
+
+<p>
+
+Risk Reward Ratio trader ko impulsive trading se bachata hai.
+
+</p>
+
+<ul>
+
+<li>Capital Protection</li>
+
+<li>Better Trade Planning</li>
+
+<li>Controlled Losses</li>
+
+<li>Consistent Decision Making</li>
+
+<li>Improved Trading Discipline</li>
+
+</ul>
+
+</section>
+
+<!-- ================= COMMON MISTAKES ================= -->
+
+<section>
+
+<h2>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Common Mistakes
+
+</h2>
+
+<ul>
+
+<li>Stop Loss decide kiye bina trade lena.</li>
+
+<li>Target randomly set karna.</li>
+
+<li>Risk Reward calculate na karna.</li>
+
+<li>Loss hone par Stop Loss ko aur neeche shift karna.</li>
+
+<li>Emotion me trade execute karna.</li>
+
+</ul>
+
+</section>
+
+<!-- ================= PRO TIPS ================= -->
+
+<section>
+
+<h2>
+
+<i class="fa-solid fa-user-tie"></i>
+
+Professional Trading Tips
+
+</h2>
+
+<div class="tips-card">
+
+<ul>
+
+<li>Har trade se pehle Risk Reward calculate karein.</li>
+
+<li>Trading journal maintain karein.</li>
+
+<li>Maximum risk per trade pehle decide karein.</li>
+
+<li>Sirf achhe setups me trade karein.</li>
+
+<li>Emotions ki jagah rules follow karein.</li>
+
+</ul>
+
+</div>
+
+</section>
