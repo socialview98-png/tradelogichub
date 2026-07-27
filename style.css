@@ -803,12 +803,16 @@ footer{
 
 .article-tag{
   display:inline-block;
-  padding:8px 16px;
-  border-radius:999px;
-  background:rgba(255,255,255,.15);
-  font-size:.85rem;
+  align-item:10px 18px;
+  gap:8px;
+  padding:10px 18px;
+  border-radius:50px;
+  background:rgba(255,255,255,.18);
+  color:#fff;
+  font-size:.9rem;
   font-weight:700;
-  margin-bottom:18px;
+  margin-bottom:22px;
+  border:1px solid rgba(255,255,255,.25);
 }
 
 .article-tag i{
