@@ -523,3 +523,160 @@ Professional Trading Tips
 </div>
 
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Risk Reward Calculator | TradeLogicHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header class="article-header">
+
+<div class="container">
+
+<p class="article-tag">
+<i class="fa-solid fa-calculator"></i>
+Trading Tool
+</p>
+
+<h1>Risk Reward Calculator</h1>
+
+<p class="article-subtitle">
+Calculate your potential risk, reward and risk reward ratio before entering a trade.
+</p>
+
+</div>
+
+</header>
+
+
+<main class="article-page">
+
+<div class="container">
+
+
+<section class="article-intro">
+
+<div class="intro-card">
+
+
+<h2>
+<i class="fa-solid fa-calculator"></i>
+Risk Reward Calculator
+</h2>
+
+
+<p>
+Risk Reward Ratio traders ko ye samajhne mein help karta hai ki kisi trade mein kitna risk liya ja raha hai aur kitna possible reward expect kiya ja sakta hai.
+</p>
+
+
+<h3>Enter Trade Details</h3>
+
+
+<label>
+Entry Price
+</label>
+
+<input type="number" id="entry" placeholder="Example: 500">
+
+
+<label>
+Stop Loss Price
+</label>
+
+<input type="number" id="stoploss" placeholder="Example: 490">
+
+
+<label>
+Target Price
+</label>
+
+<input type="number" id="target" placeholder="Example: 530">
+
+
+<button onclick="calculateRR()">
+Calculate Ratio
+</button>
+
+
+<h3 id="result"></h3>
+
+
+</div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+function calculateRR(){
+
+let entry = Number(document.getElementById("entry").value);
+
+let stoploss = Number(document.getElementById("stoploss").value);
+
+let target = Number(document.getElementById("target").value);
+
+
+let risk = entry - stoploss;
+
+let reward = target - entry;
+
+
+if(risk <=0 || reward <=0){
+
+document.getElementById("result").innerHTML =
+"Please enter valid values";
+
+return;
+
+}
+
+
+let ratio = reward / risk;
+
+
+document.getElementById("result").innerHTML =
+"Risk Reward Ratio = 1 : " + ratio.toFixed(2);
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
