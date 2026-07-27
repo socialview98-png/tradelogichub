@@ -815,6 +815,23 @@ footer{
   border:1px solid rgba(255,255,255,.25);
 }
 
+.article-page{
+    padding:60px 0;
+}
+
+.article-page .container{
+    max-width:900px;
+}
+
+.article-page h2{
+    font-size:2rem;
+    color:#0f1f3d;
+    margin:50px 0 20px;
+    border-left:5px solid #2563eb;
+    padding-left:15px;
+}
+
+
 .article-tag i{
   margin-right:6px;
 }
