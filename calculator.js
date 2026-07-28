@@ -109,3 +109,50 @@ function calculateRiskReward(){
 
 
 }
+
+// =====================================
+// Capital Risk Calculator
+// =====================================
+
+function calculateCapitalRisk(){
+
+
+    let capital = Number(document.getElementById("capitalAmount").value);
+
+    let riskPercent = Number(document.getElementById("riskPercent").value);
+
+
+
+    if(capital <= 0 || riskPercent <= 0){
+
+        alert("Please enter valid capital and risk percentage");
+
+        return;
+
+    }
+
+
+
+    // Maximum risk amount
+
+    let maxRisk = (capital * riskPercent) / 100;
+
+
+
+    // Safe position value
+
+    let safePosition = capital - maxRisk;
+
+
+
+    document.getElementById("maxRisk").innerHTML =
+    "₹" + maxRisk.toFixed(2);
+
+
+
+    document.getElementById("safePosition").innerHTML =
+    "₹" + safePosition.toFixed(2);
+
+
+
+}
