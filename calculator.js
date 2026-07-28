@@ -1,81 +1,100 @@
-function premiumRR(){
-
-let entry = Number(document.getElementById("entry").value);
-let stop = Number(document.getElementById("stop").value);
-let target = Number(document.getElementById("target").value);
-let quantity = Number(document.getElementById("quantity").value);
+// ===== Premium Risk Reward Calculator =====
 
 
-let riskPerShare = entry - stop;
-let rewardPerShare = target - entry;
+function calculateRiskReward(){
 
 
-let riskAmount = riskPerShare * quantity;
-let rewardAmount = rewardPerShare * quantity;
-
-
-let ratio = rewardAmount / riskAmount;
-
-
-document.getElementById("riskAmount").innerHTML =
-"$" + riskAmount.toFixed(2);
-
-
-document.getElementById("rewardAmount").innerHTML =
-"$" + rewardAmount.toFixed(2);
-
-
-document.getElementById("ratio").innerHTML =
-"1 : " + ratio.toFixed(2);
+    let entry = Number(document.getElementById("entryPrice").value);
+    let stop = Number(document.getElementById("stopLoss").value);
+    let target = Number(document.getElementById("targetPrice").value);
+    let quantity = Number(document.getElementById("quantity").value);
 
 
 
-let quality="";
+    if(!entry || !stop || !target || !quantity){
+
+        alert("Please fill all fields");
+
+        return;
+
+    }
 
 
-if(ratio >= 3){
 
-quality="Excellent Setup ⭐⭐⭐";
+    // Risk & Reward per share
+
+    let riskPerShare = Math.abs(entry - stop);
+
+    let rewardPerShare = Math.abs(target - entry);
+
+
+
+    // Total amount
+
+    let totalRisk = riskPerShare * quantity;
+
+    let totalReward = rewardPerShare * quantity;
+
+
+
+    // Risk Reward Ratio
+
+    let ratio = totalReward / totalRisk;
+
+
+
+    let rrText = "1:" + ratio.toFixed(2);
+
+
+
+    // Display Results
+
+
+    document.getElementById("riskAmount").innerHTML =
+    "$" + totalRisk.toFixed(2);
+
+
+
+    document.getElementById("rewardAmount").innerHTML =
+    "$" + totalReward.toFixed(2);
+
+
+
+    document.getElementById("rrRatio").innerHTML =
+    rrText;
+
+
+
+    // Trade Quality
+
+
+    let status = document.getElementById("tradeStatus");
+
+
+    if(ratio < 1){
+
+        status.innerHTML = "Poor";
+
+        status.style.color = "red";
+
+    }
+
+    else if(ratio >= 1 && ratio < 2){
+
+        status.innerHTML = "Average";
+
+        status.style.color = "orange";
+
+    }
+
+    else if(ratio >= 2){
+
+        status.innerHTML = "Excellent";
+
+        status.style.color = "green";
+
+    }
+
+
 
 }
-else if(ratio >= 2){
-
-quality="Good Setup ⭐⭐";
-
-}
-else{
-
-quality="Low Risk Reward Setup";
-
-}
-
-
-document.getElementById("quality").innerHTML=quality;
-
-
-}
-
-let lossPercent = (riskPerShare / entry) * 100;
-
-let profitPercent = (rewardPerShare / entry) * 100;
-
-
-document.getElementById("lossPercent").innerHTML =
-"Maximum Loss: " + lossPercent.toFixed(2) + "%";
-
-
-document.getElementById("profitPercent").innerHTML =
-"Potential Profit: " + profitPercent.toFixed(2) + "%";
-
-
-
-let riskWidth = 100 / (ratio + 1);
-let rewardWidth = 100 - riskWidth;
-
-
-document.getElementById("riskBar").style.width =
-riskWidth + "%";
-
-
-document.getElementById("rewardBar").style.width =
-rewardWidth + "%";
