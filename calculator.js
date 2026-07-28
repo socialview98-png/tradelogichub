@@ -54,3 +54,28 @@ document.getElementById("quality").innerHTML=quality;
 
 
 }
+
+let lossPercent = (riskPerShare / entry) * 100;
+
+let profitPercent = (rewardPerShare / entry) * 100;
+
+
+document.getElementById("lossPercent").innerHTML =
+"Maximum Loss: " + lossPercent.toFixed(2) + "%";
+
+
+document.getElementById("profitPercent").innerHTML =
+"Potential Profit: " + profitPercent.toFixed(2) + "%";
+
+
+
+let riskWidth = 100 / (ratio + 1);
+let rewardWidth = 100 - riskWidth;
+
+
+document.getElementById("riskBar").style.width =
+riskWidth + "%";
+
+
+document.getElementById("rewardBar").style.width =
+rewardWidth + "%";
