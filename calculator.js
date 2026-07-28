@@ -4,11 +4,11 @@ function calculateTrade(){
   let riskPercent = Number(document.getElementById("riskPercent").value);
 
   let entry = Number(document.getElementById("entry").value);
-  let stoploss = Number(document.getElementById("stopLoss").value);
+  let stoploss = Number(document.getElementById("stoploss").value);
   let target = Number(document.getElementById("target").value);
 
 
-  if(!capital || !riskPercent || !entry || !stopLoss || !target){
+  if(!capital || !riskPercent || !entry || !stoploss || !target){
 
     alert("Please fill all details");
 
