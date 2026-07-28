@@ -774,3 +774,44 @@ font-size:1.2rem;
 }
 
 }
+
+/* ===== Trade Analysis ===== */
+
+.trade-analysis{
+margin-top:35px;
+padding-top:30px;
+border-top:1px solid #e5e7eb;
+}
+
+.analysis-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+margin-top:20px;
+}
+
+.analysis-item{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:20px;
+}
+
+.analysis-item h4{
+margin-bottom:10px;
+color:#0f172a;
+font-size:1rem;
+}
+
+.analysis-item p{
+margin:0;
+font-weight:600;
+color:#475569;
+line-height:1.6;
+}
+
+@media(max-width:768px){
+.analysis-grid{
+grid-template-columns:1fr;
+}
+}
