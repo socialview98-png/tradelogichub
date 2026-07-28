@@ -218,3 +218,62 @@
 }
 
 }
+
+/* ===== Version 2 Visual Upgrade ===== */
+
+
+.visual-card,
+.percentage-card{
+
+    margin-top:20px;
+    padding:20px;
+    border-radius:18px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+
+}
+
+
+.bar-container{
+
+    display:flex;
+    height:35px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
+
+}
+
+
+.risk-bar{
+
+    background:#ef4444;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    transition:0.5s;
+
+}
+
+
+.reward-bar{
+
+    background:#22c55e;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    transition:0.5s;
+
+}
+
+
+.percentage-card p{
+
+    font-weight:600;
+    margin:10px 0;
+
+}
