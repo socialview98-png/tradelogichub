@@ -1,68 +1,110 @@
-function calculateRR(){
+function calculateTrade() {
 
-  let capital = Number(document.getElementById("capital").value);
-  let riskPercent = Number(document.getElementById("riskPercent").value);
+    const capital = parseFloat(document.getElementById("capital").value);
+    const riskPercent = parseFloat(document.getElementById("riskPercent").value);
 
-  let entry = Number(document.getElementById("entry").value);
-  let stoploss = Number(document.getElementById("stoploss").value);
-  let target = Number(document.getElementById("target").value);
+    const entry = parseFloat(document.getElementById("entry").value);
+    const stopLoss = parseFloat(document.getElementById("stopLoss").value);
+    const target = parseFloat(document.getElementById("target").value);
 
+    const tradeType =
+        document.querySelector('input[name="tradeType"]:checked').value;
 
-  if(!capital || !riskPercent || !entry || !stoploss || !target){
+    if (
+        isNaN(capital) ||
+        isNaN(riskPercent) ||
+        isNaN(entry) ||
+        isNaN(stopLoss) ||
+        isNaN(target)
+    ) {
 
-    alert("Please fill all details");
+        alert("Please fill all fields.");
 
-    return;
-  }
+        return;
+    }
 
+    if (capital <= 0 || riskPercent <= 0) {
 
-  // Maximum money risk
+        alert("Capital and Risk % must be greater than zero.");
 
-  let riskAmount = capital * riskPercent / 100;
+        return;
+    }
 
+    let riskPerShare;
+    let rewardPerShare;
 
-  // Risk per share
+    if (tradeType === "buy") {
 
-  let riskPerShare = entry - stopLoss;
+        riskPerShare = entry - stopLoss;
+        rewardPerShare = target - entry;
 
+    } else {
 
-  // Reward per share
+        riskPerShare = stopLoss - entry;
+        rewardPerShare = entry - target;
 
-  let rewardPerShare = target - entry;
+    }
 
+    if (riskPerShare <= 0 || rewardPerShare <= 0) {
 
-  // Total reward
+        alert("Please enter valid Entry, Stop Loss and Target values.");
 
-  let rewardAmount = rewardPerShare * (riskAmount / riskPerShare);
+        return;
+    }
 
+    const riskAmount = capital * riskPercent / 100;
 
+    const quantity = Math.floor(riskAmount / riskPerShare);
 
-  // Risk Reward Ratio
+    const rewardAmount = quantity * rewardPerShare;
 
-  let ratio = rewardPerShare / riskPerShare;
+    const ratio = rewardPerShare / riskPerShare;
 
+    const winRate = 100 / (ratio + 1);
 
+    let rating = "";
+    let color = "";
 
-  // Maximum quantity
+    if (ratio >= 3) {
 
-  let quantity = Math.floor(riskAmount / riskPerShare);
+        rating = "Excellent ⭐⭐⭐⭐⭐";
+        color = "green";
 
+    } else if (ratio >= 2) {
 
+        rating = "Good ⭐⭐⭐⭐";
+        color = "#2563eb";
 
-  document.getElementById("riskAmount").innerHTML =
-  "Risk Amount: ₹" + riskAmount.toFixed(2);
+    } else if (ratio >= 1.5) {
 
+        rating = "Average ⭐⭐⭐";
+        color = "orange";
 
-  document.getElementById("rewardAmount").innerHTML =
-  "Reward Amount: ₹" + rewardAmount.toFixed(2);
+    } else {
 
+        rating = "Poor ⭐";
+        color = "red";
 
-  document.getElementById("ratio").innerHTML =
-  "Risk Reward Ratio: 1:" + ratio.toFixed(2);
+    }
 
+    document.getElementById("riskAmount").innerHTML =
+        "Risk Amount : ₹" + riskAmount.toFixed(2);
 
-  document.getElementById("quantity").innerHTML =
-  "Maximum Quantity: " + quantity + " shares";
+    document.getElementById("rewardAmount").innerHTML =
+        "Reward Amount : ₹" + rewardAmount.toFixed(2);
 
+    document.getElementById("ratio").innerHTML =
+        "Risk Reward Ratio : 1 : " + ratio.toFixed(2);
 
+    document.getElementById("quantity").innerHTML =
+        "Maximum Quantity : " + quantity + " Shares";
+
+    document.getElementById("winRate").innerHTML =
+        "Required Win Rate : " + winRate.toFixed(2) + "%";
+
+    const ratingBox = document.getElementById("rating");
+
+    ratingBox.innerHTML = "Trade Rating : " + rating;
+
+    ratingBox.style.color = color;
 }
