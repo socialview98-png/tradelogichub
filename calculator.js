@@ -1,4 +1,4 @@
-function calculateTrade(){
+function calculateRR(){
 
   let capital = Number(document.getElementById("capital").value);
   let riskPercent = Number(document.getElementById("riskPercent").value);
