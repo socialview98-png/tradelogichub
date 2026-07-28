@@ -373,3 +373,307 @@ padding:25px;
 }
 
 }
+/* ===================================================
+   PREMIUM RISK REWARD CALCULATOR
+   PART 2
+===================================================*/
+
+
+/* Formula Box */
+
+.formula-box{
+
+    background:#f8fbff;
+
+    border-left:5px solid #2563eb;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.formula-box p{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#334155;
+
+    margin-bottom:15px;
+
+}
+
+.formula-box p:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+
+/* Step Box */
+
+.step-box{
+
+    background:#f8fbff;
+
+    border:1px solid #e4ebf7;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+
+}
+
+.step-box:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.step-box h3{
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* Example Table */
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:25px 0;
+
+}
+
+.info-table th{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+.info-table td{
+
+    padding:15px;
+
+    border:1px solid #dbe3f1;
+
+    color:#475569;
+
+}
+
+.info-table tr:nth-child(even){
+
+    background:#f8fbff;
+
+}
+
+
+
+/* FAQ */
+
+.calculator-info h3{
+
+    margin-top:30px;
+
+    margin-bottom:12px;
+
+    color:#0f172a;
+
+}
+
+
+
+/* Disclaimer */
+
+.disclaimer-box{
+
+    background:#fff8f8;
+
+    border-left:6px solid #dc2626;
+
+}
+
+.disclaimer-box h2{
+
+    color:#b91c1c;
+
+}
+
+.disclaimer-box p{
+
+    color:#7f1d1d;
+
+}
+
+
+
+/* Back Button */
+
+.back-home{
+
+    text-align:center;
+
+    margin:50px 0;
+
+}
+
+.back-home a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 28px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.back-home a:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Smooth Animation */
+
+.calculator-card,
+.calculator-info{
+
+    animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf2fb;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.formula-box{
+
+padding:18px;
+
+}
+
+.info-table{
+
+font-size:.9rem;
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+.step-box{
+
+padding:18px;
+
+}
+
+.back-home a{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.result-box{
+
+padding:20px;
+
+}
+
+.result-box p{
+
+font-size:.95rem;
+
+}
+
+}
