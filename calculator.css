@@ -1,21 +1,64 @@
 /* =====================================
-   TradeLogicHub Premium Calculator CSS
+   TradeLogicHub Premium Risk Calculator
 ===================================== */
 
 
+/* Header */
+
+.calculator-header{
+
+    background:#0f172a;
+    color:white;
+
+    padding:20px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+.logo{
+
+    font-size:26px;
+    font-weight:800;
+    color:white;
+
+}
+
+
+.calculator-header nav a{
+
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+
+}
+
+
+.calculator-header nav a:hover{
+
+    color:#3b82f6;
+
+}
+
+
+
+
+
+/* Hero */
+
 .calculator-hero{
 
-    padding:70px 20px;
-
-    background:linear-gradient(
-        135deg,
-        #0f172a,
-        #1d4ed8
-    );
+    background:linear-gradient(135deg,#0f172a,#2563eb);
 
     color:white;
 
     text-align:center;
+
+    padding:80px 20px;
 
 }
 
@@ -23,7 +66,6 @@
 .calculator-hero h1{
 
     font-size:42px;
-
     margin-bottom:15px;
 
 }
@@ -32,8 +74,7 @@
 .calculator-hero p{
 
     font-size:18px;
-
-    opacity:0.9;
+    opacity:.9;
 
 }
 
@@ -41,25 +82,23 @@
 
 
 
-/* Calculator Section */
+/* Main Wrapper */
 
-
-.calculator-section{
-
-    padding:70px 20px;
+.calculator-wrapper{
 
     background:#f8fafc;
 
+    padding:70px 20px;
+
 }
 
 
 
 
 
-/* Main Card */
+/* Calculator Card */
 
-
-.premium-calculator-card{
+.calculator-card{
 
     max-width:950px;
 
@@ -69,12 +108,12 @@
 
     padding:40px;
 
-    border-radius:28px;
+    border-radius:25px;
 
     border:1px solid #e2e8f0;
 
     box-shadow:
-    0 20px 50px rgba(15,23,42,0.12);
+    0 20px 45px rgba(15,23,42,.12);
 
 }
 
@@ -82,10 +121,10 @@
 
 
 
-/* Heading */
 
+/* Title */
 
-.tool-heading{
+.tool-title{
 
     display:flex;
 
@@ -98,8 +137,11 @@
 }
 
 
+.tool-title i{
 
-.tool-heading i{
+    background:#2563eb;
+
+    color:white;
 
     height:55px;
 
@@ -107,23 +149,18 @@
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    border-radius:16px;
+    align-items:center;
 
-    background:#2563eb;
-
-    color:white;
+    border-radius:15px;
 
     font-size:25px;
 
 }
 
 
-
-.tool-heading h2{
+.tool-title h2{
 
     color:#0f172a;
 
@@ -132,12 +169,9 @@
 }
 
 
-
-.tool-heading p{
+.tool-title p{
 
     color:#64748b;
-
-    margin-top:5px;
 
 }
 
@@ -150,7 +184,7 @@
 /* Inputs */
 
 
-.input-grid{
+.calculator-inputs{
 
     display:grid;
 
@@ -161,44 +195,39 @@
 }
 
 
-
-.input-group label{
+.calculator-inputs label{
 
     display:block;
-
-    margin-bottom:8px;
 
     font-weight:600;
 
     color:#334155;
 
+    margin-bottom:8px;
+
 }
 
 
-
-.input-group input{
+.calculator-inputs input{
 
     width:100%;
 
     padding:15px;
 
-    border-radius:14px;
+    border-radius:12px;
 
     border:1px solid #cbd5e1;
 
     font-size:16px;
 
-    outline:none;
-
 }
 
 
+.calculator-inputs input:focus{
 
-.input-group input:focus{
+    outline:none;
 
     border-color:#2563eb;
-
-    box-shadow:0 0 0 3px rgba(37,99,235,0.15);
 
 }
 
@@ -211,7 +240,7 @@
 /* Button */
 
 
-.calculate-btn{
+.calculator-card button{
 
     margin-top:35px;
 
@@ -233,17 +262,12 @@
 
     cursor:pointer;
 
-    transition:.3s;
-
 }
 
 
+.calculator-card button:hover{
 
-.calculate-btn:hover{
-
-    background:#1e40af;
-
-    transform:translateY(-2px);
+    background:#1d4ed8;
 
 }
 
@@ -252,11 +276,10 @@
 
 
 
+/* Results */
 
-/* Results Dashboard */
 
-
-.results-dashboard{
+.result-section{
 
     margin-top:40px;
 
@@ -269,50 +292,23 @@
 }
 
 
-
-
-
-.result-card{
-
-    padding:25px 15px;
-
-    border-radius:20px;
-
-    text-align:center;
+.result-section div{
 
     background:#f8fafc;
 
+    padding:25px 15px;
+
+    border-radius:18px;
+
+    text-align:center;
+
     border:1px solid #e2e8f0;
 
-    transition:.3s;
-
 }
 
 
 
-.result-card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 12px 25px rgba(15,23,42,0.1);
-
-}
-
-
-
-.result-card i{
-
-    font-size:25px;
-
-    color:#2563eb;
-
-    margin-bottom:12px;
-
-}
-
-
-
-.result-card h3{
+.result-section h3{
 
     font-size:15px;
 
@@ -323,39 +319,11 @@
 }
 
 
-
-.result-card strong{
+.result-section span{
 
     font-size:24px;
 
-    color:#0f172a;
-
-}
-
-
-
-
-
-/* Different Result Colors */
-
-
-.risk strong{
-
-    color:#dc2626;
-
-}
-
-
-
-.reward strong{
-
-    color:#16a34a;
-
-}
-
-
-
-.ratio strong{
+    font-weight:800;
 
     color:#2563eb;
 
@@ -363,9 +331,40 @@
 
 
 
-.status strong{
 
-    color:#f59e0b;
+
+
+
+/* Info Section */
+
+
+.info-section{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:60px 20px;
+
+}
+
+
+.info-section h2{
+
+    color:#0f172a;
+
+    margin-bottom:15px;
+
+}
+
+
+.info-section p{
+
+    color:#475569;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
 
 }
 
@@ -373,18 +372,64 @@
 
 
 
+
+/* Disclaimer */
+
+
+.disclaimer{
+
+    max-width:900px;
+
+    margin:20px auto 60px;
+
+    padding:30px;
+
+    background:#fff7ed;
+
+    border-left:5px solid #f97316;
+
+    border-radius:15px;
+
+}
+
+
+.disclaimer h2{
+
+    color:#9a3412;
+
+    margin-bottom:15px;
+
+}
+
+
+.disclaimer p{
+
+    color:#7c2d12;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+/* Footer */
+
+
 footer{
-
-    text-align:center;
-
-    padding:25px;
 
     background:#0f172a;
 
     color:white;
 
-}
+    text-align:center;
 
+    padding:25px;
+
+}
 
 
 
@@ -394,52 +439,56 @@ footer{
 
 /* Mobile */
 
-
 @media(max-width:768px){
 
 
-.calculator-hero h1{
+.calculator-header{
 
-    font-size:32px;
+    flex-direction:column;
 
-}
-
-
-
-.premium-calculator-card{
-
-    padding:25px;
+    gap:15px;
 
 }
 
 
-
-.input-grid{
+.calculator-inputs{
 
     grid-template-columns:1fr;
 
 }
 
 
+.result-section{
 
-.results-dashboard{
+    grid-template-columns:1fr 1fr;
 
-    grid-template-columns:repeat(2,1fr);
+}
+
+
+.calculator-hero h1{
+
+    font-size:30px;
 
 }
 
 
 }
-
 
 
 
 @media(max-width:450px){
 
 
-.results-dashboard{
+.result-section{
 
     grid-template-columns:1fr;
+
+}
+
+
+.calculator-card{
+
+    padding:25px;
 
 }
 
