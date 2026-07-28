@@ -92,7 +92,172 @@
 
 }
 
+/* =====================================
+   Risk Reward Visual Meter
+===================================== */
 
+
+.meter-section{
+
+    background:#f8fafc;
+
+    padding:40px 20px 70px;
+
+}
+
+
+
+.meter-box{
+
+    margin-top:30px;
+
+}
+
+
+
+.meter-row{
+
+    margin-bottom:30px;
+
+}
+
+
+
+.meter-label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+}
+
+
+.meter-label span{
+
+    font-weight:700;
+
+    color:#334155;
+
+}
+
+
+.meter-label strong{
+
+    color:#0f172a;
+
+}
+
+
+
+
+
+.bar-container{
+
+    width:100%;
+
+    height:22px;
+
+    background:#e2e8f0;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+
+
+.risk-bar{
+
+    height:100%;
+
+    width:30%;
+
+    background:#dc2626;
+
+    border-radius:20px;
+
+    transition:.5s;
+
+}
+
+
+
+.reward-bar{
+
+    height:100%;
+
+    width:60%;
+
+    background:#16a34a;
+
+    border-radius:20px;
+
+    transition:.5s;
+
+}
+
+
+
+
+
+.ratio-display{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    background:#eff6ff;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    border:1px solid #bfdbfe;
+
+}
+
+
+
+.ratio-display h3{
+
+    color:#475569;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.ratio-display strong{
+
+    font-size:32px;
+
+    color:#2563eb;
+
+}
+
+
+
+
+@media(max-width:768px){
+
+
+.meter-label{
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+}
 
 
 
