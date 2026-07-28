@@ -313,7 +313,135 @@ Calculate Risk Amount
 
 
 
+<!-- Position Size Calculator -->
 
+<section class="position-section">
+
+<div class="capital-card">
+
+
+<div class="tool-title">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<div>
+
+<h2>Position Size Calculator</h2>
+
+<p>
+Calculate the right quantity according to your risk.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+<div class="calculator-inputs">
+
+
+<div>
+
+<label>Risk Amount</label>
+
+<input 
+type="number"
+id="riskAmountInput"
+placeholder="Example: 2000">
+
+</div>
+
+
+
+<div>
+
+<label>Entry Price</label>
+
+<input 
+type="number"
+id="positionEntry"
+placeholder="Example: 100">
+
+</div>
+
+
+
+<div>
+
+<label>Stop Loss Price</label>
+
+<input 
+type="number"
+id="positionStop"
+placeholder="Example: 95">
+
+</div>
+
+
+
+</div>
+
+
+
+
+<button onclick="calculatePositionSize()">
+
+<i class="fa-solid fa-calculator"></i>
+Calculate Position Size
+
+</button>
+
+
+
+
+
+<div class="result-section">
+
+
+<div>
+
+<h3>Risk Per Share</h3>
+
+<span id="riskPerShare">
+₹0
+</span>
+
+</div>
+
+
+
+<div>
+
+<h3>Maximum Quantity</h3>
+
+<span id="maxQuantity">
+0
+</span>
+
+</div>
+
+
+
+<div>
+
+<h3>Position Value</h3>
+
+<span id="positionValue">
+₹0
+</span>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+</section>
   
 
 
