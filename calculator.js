@@ -156,3 +156,66 @@ function calculateCapitalRisk(){
 
 
 }
+
+// =====================================
+// Position Size Calculator
+// =====================================
+
+function calculatePositionSize(){
+
+
+    let riskAmount = Number(document.getElementById("riskAmountInput").value);
+
+    let entryPrice = Number(document.getElementById("positionEntry").value);
+
+    let stopPrice = Number(document.getElementById("positionStop").value);
+
+
+
+    if(riskAmount <= 0 || entryPrice <= 0 || stopPrice <= 0){
+
+        alert("Please enter valid details");
+
+        return;
+
+    }
+
+
+
+    // Risk per share
+
+    let riskPerShare = Math.abs(entryPrice - stopPrice);
+
+
+
+    // Maximum quantity
+
+    let maxQuantity = Math.floor(riskAmount / riskPerShare);
+
+
+
+    // Total position value
+
+    let positionValue = maxQuantity * entryPrice;
+
+
+
+    // Display results
+
+
+    document.getElementById("riskPerShare").innerHTML =
+    "₹" + riskPerShare.toFixed(2);
+
+
+
+    document.getElementById("maxQuantity").innerHTML =
+    maxQuantity;
+
+
+
+    document.getElementById("positionValue").innerHTML =
+    "₹" + positionValue.toFixed(2);
+
+
+
+}
