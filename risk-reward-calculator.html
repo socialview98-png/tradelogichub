@@ -1,103 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Risk Reward Calculator | TradeLogicHub</title>
 
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/calculator.css">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
+
 <body>
 
-<header class="calculator-header">
-    <h1>Risk Reward Calculator</h1>
-    <p>Calculate your trade risk, reward and position quality</p>
+
+<!-- Header -->
+
+<header class="main-header">
+
+<div class="logo">
+TradeLogicHub
+</div>
+
+
+<nav>
+<a href="index.html">Home</a>
+<a href="articles.html">Articles</a>
+<a href="tools.html">Tools</a>
+</nav>
+
 </header>
 
 
-<section class="calculator-container">
-
-<div class="calculator-card">
-
-    <div class="calculator-title">
-        <i class="fa-solid fa-chart-line"></i>
-        <h2>Trade Setup</h2>
-    </div>
 
 
-    <div class="input-grid">
+<!-- Hero -->
 
-        <div class="input-box">
-            <label>Entry Price</label>
-            <input type="number" id="entryPrice" placeholder="Enter entry price">
-        </div>
+<section class="calculator-hero">
 
+<div class="hero-content">
 
-        <div class="input-box">
-            <label>Stop Loss</label>
-            <input type="number" id="stopLoss" placeholder="Enter stop loss">
-        </div>
+<h1>
+Risk Reward Calculator
+</h1>
 
-
-        <div class="input-box">
-            <label>Target Price</label>
-            <input type="number" id="targetPrice" placeholder="Enter target price">
-        </div>
-
-
-        <div class="input-box">
-            <label>Quantity</label>
-            <input type="number" id="quantity" placeholder="Enter quantity">
-        </div>
-
-    </div>
-
-
-    <button onclick="calculateRiskReward()" class="calculate-btn">
-        Calculate
-    </button>
-
-
-    <div class="result-box">
-
-        <div class="result-card">
-            <h3>Risk</h3>
-            <p id="riskAmount">$0</p>
-        </div>
-
-
-        <div class="result-card">
-            <h3>Reward</h3>
-            <p id="rewardAmount">$0</p>
-        </div>
-
-
-        <div class="result-card">
-            <h3>Ratio</h3>
-            <p id="rrRatio">1:0</p>
-        </div>
-
-
-        <div class="result-card">
-            <h3>Status</h3>
-            <p id="tradeStatus">Waiting</p>
-        </div>
-
-    </div>
-
+<p>
+Plan your trades with logic, manage risk and improve your trading decisions.
+</p>
 
 </div>
 
 </section>
 
 
+
+
+
+<!-- Calculator -->
+
+<section class="calculator-section">
+
+
+<div class="premium-calculator-card">
+
+
+<div class="tool-heading">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<div>
+<h2>Trade Setup Calculator</h2>
+<p>Calculate risk, reward and trade quality</p>
+</div>
+
+</div>
+
+
+
+
+
+<div class="input-grid">
+
+
+<div class="input-group">
+
+<label>Entry Price</label>
+
+<input type="number" id="entryPrice" placeholder="Example: 100">
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>Stop Loss</label>
+
+<input type="number" id="stopLoss" placeholder="Example: 95">
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>Target Price</label>
+
+<input type="number" id="targetPrice" placeholder="Example: 115">
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>Quantity</label>
+
+<input type="number" id="quantity" placeholder="Example: 10">
+
+</div>
+
+
+</div>
+
+
+
+
+<button class="calculate-btn" onclick="calculateRiskReward()">
+
+<i class="fa-solid fa-calculator"></i>
+Calculate Risk Reward
+
+</button>
+
+
+
+
+
+
+<div class="results-dashboard">
+
+
+<div class="result-card risk">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h3>Total Risk</h3>
+
+<strong id="riskAmount">$0</strong>
+
+</div>
+
+
+
+
+<div class="result-card reward">
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+<h3>Total Reward</h3>
+
+<strong id="rewardAmount">$0</strong>
+
+</div>
+
+
+
+
+<div class="result-card ratio">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h3>Risk Reward</h3>
+
+<strong id="rrRatio">1:0</strong>
+
+</div>
+
+
+
+
+<div class="result-card status">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>Trade Quality</h3>
+
+<strong id="tradeStatus">Waiting</strong>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© TradeLogicHub | Master Trading with Logic, NOT Emotion
+</p>
+
+</footer>
+
+
+
+
 <script src="js/calculator.js"></script>
 
+
 </body>
+
 </html>
