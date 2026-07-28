@@ -1,83 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Risk Reward Calculator | TradeLogicHub</title>
+<title>Premium Risk Reward Calculator | TradeLogicHub</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
+
 
 <section class="calculator-page">
 
-<div class="calculator-card">
+
+<div class="premium-calculator">
+
 
 <h1>Risk Reward Calculator</h1>
 
 <p>
-Calculate your trading risk, reward and risk to reward ratio before taking a trade.
+Plan your trade before entering the market. Calculate risk, reward and trade quality.
 </p>
 
 
-<div class="input-group">
+<div class="calculator-grid">
 
+
+<div class="input-panel">
+
+
+<div class="input-group">
+<label>Stock Name</label>
+<input type="text" id="stock" placeholder="Example: ABCD">
+</div>
+
+
+<div class="input-group">
 <label>Entry Price</label>
-<input type="number" id="entry" placeholder="Example: 100">
-
+<input type="number" id="entry" placeholder="100">
 </div>
 
 
 <div class="input-group">
-
 <label>Stop Loss Price</label>
-<input type="number" id="stoploss" placeholder="Example: 95">
-
+<input type="number" id="stop" placeholder="95">
 </div>
 
 
 <div class="input-group">
-
 <label>Target Price</label>
-<input type="number" id="target" placeholder="Example: 110">
-
+<input type="number" id="target" placeholder="110">
 </div>
 
 
 <div class="input-group">
-
 <label>Quantity</label>
-<input type="number" id="quantity" placeholder="Example: 10">
-
+<input type="number" id="quantity" placeholder="10">
 </div>
 
 
-<button onclick="calculateRR()">
-Calculate
+<button onclick="premiumRR()">
+Calculate Trade
 </button>
 
 
-<div class="result-box">
+</div>
 
-<h2>Result</h2>
 
-<p id="risk"></p>
-<p id="reward"></p>
-<p id="ratio"></p>
-<p id="amount"></p>
+
+<div class="result-panel">
+
+
+<h2>Trade Analysis</h2>
+
+
+<div class="result-card">
+
+<h3>Risk Amount</h3>
+<p id="riskAmount">$0</p>
+
+</div>
+
+
+<div class="result-card">
+
+<h3>Reward Amount</h3>
+<p id="rewardAmount">$0</p>
+
+</div>
+
+
+
+<div class="ratio-card">
+
+<h3>Risk Reward Ratio</h3>
+
+<p id="ratio">
+1 : 0
+</p>
+
+</div>
+
+
+
+<div class="quality-card">
+
+<h3>Trade Quality</h3>
+
+<p id="quality">
+Waiting for calculation...
+</p>
+
 
 </div>
 
 
 </div>
+
+
+</div>
+
+
+<div class="trade-note">
+
+<h3>Trader Rule</h3>
+
+<p>
+Always define your risk before entering a trade. A good risk reward ratio helps traders manage losses and protect capital.
+</p>
+
+</div>
+
+
+</div>
+
 
 </section>
 
 
+
 <script src="calculator.js"></script>
 
+
 </body>
+
 </html>
