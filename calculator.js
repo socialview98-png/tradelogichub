@@ -1,142 +1,36 @@
-function calculateTrade() {
+function calculateRR(){
 
-    const capital = parseFloat(document.getElementById("capital").value);
-    const riskPercent = parseFloat(document.getElementById("riskPercent").value);
+let entry = Number(document.getElementById("entry").value);
+let stop = Number(document.getElementById("stoploss").value);
+let target = Number(document.getElementById("target").value);
+let quantity = Number(document.getElementById("quantity").value);
 
-    const entry = parseFloat(document.getElementById("entry").value);
-    const stopLoss = parseFloat(document.getElementById("stopLoss").value);
-    const target = parseFloat(document.getElementById("target").value);
 
-    const tradeType =
-        document.querySelector('input[name="tradeType"]:checked').value;
+let risk = entry - stop;
+let reward = target - entry;
 
-    if (
-        isNaN(capital) ||
-        isNaN(riskPercent) ||
-        isNaN(entry) ||
-        isNaN(stopLoss) ||
-        isNaN(target)
-    ) {
 
-        alert("Please fill all fields.");
+let riskAmount = risk * quantity;
+let rewardAmount = reward * quantity;
 
-        return;
-    }
 
-    if (capital <= 0 || riskPercent <= 0) {
+let ratio = reward / risk;
 
-        alert("Capital and Risk % must be greater than zero.");
 
-        return;
-    }
+document.getElementById("risk").innerHTML =
+"Risk Per Share: $" + risk.toFixed(2);
 
-    let riskPerShare;
-    let rewardPerShare;
 
-    if (tradeType === "buy") {
+document.getElementById("reward").innerHTML =
+"Reward Per Share: $" + reward.toFixed(2);
 
-        riskPerShare = entry - stopLoss;
-        rewardPerShare = target - entry;
 
-    } else {
+document.getElementById("ratio").innerHTML =
+"Risk Reward Ratio: 1 : " + ratio.toFixed(2);
 
-        riskPerShare = stopLoss - entry;
-        rewardPerShare = entry - target;
 
-    }
+document.getElementById("amount").innerHTML =
+"Risk Amount: $" + riskAmount.toFixed(2) +
+"<br>Reward Amount: $" + rewardAmount.toFixed(2);
 
-    if (riskPerShare <= 0 || rewardPerShare <= 0) {
-
-        alert("Please enter valid Entry, Stop Loss and Target values.");
-
-        return;
-    }
-
-    const riskAmount = capital * riskPercent / 100;
-
-    const quantity = Math.floor(riskAmount / riskPerShare);
-
-    const rewardAmount = quantity * rewardPerShare;
-
-    const ratio = rewardPerShare / riskPerShare;
-
-    const winRate = 100 / (ratio + 1);
-
-    let rating = "";
-    let color = "";
-
-    if (ratio >= 3) {
-
-        rating = "Excellent ⭐⭐⭐⭐⭐";
-        color = "green";
-
-    } else if (ratio >= 2) {
-
-        rating = "Good ⭐⭐⭐⭐";
-        color = "#2563eb";
-
-    } else if (ratio >= 1.5) {
-
-        rating = "Average ⭐⭐⭐";
-        color = "orange";
-
-    } else {
-
-        rating = "Poor ⭐";
-        color = "red";
-
-    }
-
-    document.getElementById("riskAmount").innerHTML =
-        "Risk Amount : ₹" + riskAmount.toFixed(2);
-
-    document.getElementById("rewardAmount").innerHTML =
-        "Reward Amount : ₹" + rewardAmount.toFixed(2);
-
-    document.getElementById("ratio").innerHTML =
-        "Risk Reward Ratio : 1 : " + ratio.toFixed(2);
-
-    document.getElementById("quantity").innerHTML =
-        "Maximum Quantity : " + quantity + " Shares";
-
-    document.getElementById("winRate").innerHTML =
-        "Required Win Rate : " + winRate.toFixed(2) + "%";
-
-    const ratingBox = document.getElementById("rating");
-
-    ratingBox.innerHTML = "Trade Rating : " + rating;
-
-    ratingBox.style.color = color;
 }
-
-let quality = "";
-let riskLevel = "";
-let rewardLevel = "";
-let suggestion = "";
-
-if (ratio >= 3) {
-
-    quality = "Excellent Trade";
-    riskLevel = "Low";
-    rewardLevel = "High";
-    suggestion = "Trade setup looks strong if your strategy also confirms the entry.";
-
-} else if (ratio >= 2) {
-
-    quality = "Good Trade";
-    riskLevel = "Moderate";
-    rewardLevel = "Good";
-    suggestion = "Good risk-reward. Wait for confirmation before entering.";
-
-} else {
-
-    quality = "Weak Trade";
-    riskLevel = "High";
-    rewardLevel = "Low";
-    suggestion = "Avoid this setup or improve the target/stop loss.";
-}
-
-document.getElementById("analysisQuality").textContent = quality;
-document.getElementById("analysisRisk").textContent = riskLevel;
-document.getElementById("analysisReward").textContent = rewardLevel;
-document.getElementById("analysisSuggestion").textContent = suggestion;
