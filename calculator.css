@@ -589,3 +589,94 @@ footer{
     color:#2563eb;
 
 }
+
+/* =====================================
+   Position Size Calculator Section
+===================================== */
+
+
+.position-section{
+
+    background:#f8fafc;
+
+    padding:40px 20px 70px;
+
+}
+
+
+
+.position-section .capital-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+}
+
+
+
+.position-section .result-section{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+
+
+.position-section .result-section div{
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+}
+
+
+
+.position-section .result-section h3{
+
+    color:#475569;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.position-section .result-section span{
+
+    color:#2563eb;
+
+    font-size:24px;
+
+    font-weight:800;
+
+}
+
+
+
+
+
+@media(max-width:768px){
+
+    .position-section .result-section{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
