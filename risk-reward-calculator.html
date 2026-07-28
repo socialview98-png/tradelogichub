@@ -8,59 +8,88 @@
 
 <title>Risk Reward Calculator | Trade Logic Hub</title>
 
-<meta name="description" content="Free Risk Reward Calculator for traders. Calculate risk, reward and risk reward ratio before entering a trade.">
+<meta name="description"
+content="Free Risk Reward Calculator to calculate Risk, Reward, Position Size, Required Win Rate and Risk Reward Ratio before entering any trade.">
 
-<link rel="stylesheet" href="style.css">
+<meta name="keywords"
+content="Risk Reward Calculator, Position Size Calculator, Trading Calculator, Risk Management">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="calculator.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
-
 <body>
 
+
+<!-- ================= HEADER ================= -->
 
 <header class="article-header">
 
 <div class="container">
 
+<nav class="breadcrumb">
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i> Home
+</a>
+
+<span>/</span>
+
+<a href="index.html#tools">
+Trading Tools
+</a>
+
+<span>/</span>
+
+<strong>Risk Reward Calculator</strong>
+
+</nav>
+
+
 <p class="article-tag">
+
 <i class="fa-solid fa-calculator"></i>
-Trading Tool
+
+Professional Trading Tool
+
 </p>
 
 
 <h1>
+
 Risk Reward Calculator
+
 </h1>
 
 
 <p class="article-subtitle">
-Calculate your potential risk, reward and risk reward ratio before taking any trade. A simple tool designed for disciplined traders.
+
+Calculate Risk, Reward, Position Size, Win Rate and build disciplined trades before entering the market.
+
 </p>
 
 
 <div class="article-meta">
 
 <span>
-<i class="fa-solid fa-shield-halved"></i>
-Risk Management
+<i class="fa-solid fa-chart-line"></i>
+Professional Tool
 </span>
-
 
 <span>
 <i class="fa-solid fa-user-graduate"></i>
 Beginner Friendly
 </span>
 
-
 <span>
-<i class="fa-solid fa-chart-line"></i>
-Trading Education
+<i class="fa-solid fa-shield-halved"></i>
+Risk Management
 </span>
 
 </div>
-
 
 </div>
 
@@ -68,386 +97,538 @@ Trading Education
 
 
 
-<main class="article-page">
+<!-- ================= MAIN ================= -->
 
+<main class="calculator-page">
 
 <div class="container">
 
 
-<section class="calculator-box">
-
+<div class="calculator-card">
 
 <h2>
+
 <i class="fa-solid fa-calculator"></i>
-Calculate Your Risk Reward
+
+Risk Reward Calculator
+
 </h2>
 
 
-<div class="calculator-grid">
 
+<!-- BUY / SELL -->
 
-<div class="input-group">
-
-<label>
-Entry Price
-</label>
-
-<input type="number" id="entry" placeholder="Example: 500">
-
-</div>
-
-
-
-<div class="input-group">
+<div class="trade-type">
 
 <label>
-Stop Loss Price
+
+<input type="radio"
+name="tradeType"
+value="buy"
+checked>
+
+Buy Trade
+
 </label>
 
-<input type="number" id="stoploss" placeholder="Example: 490">
-
-</div>
-
-
-
-<div class="input-group">
 
 <label>
-Target Price
+
+<input type="radio"
+name="tradeType"
+value="sell">
+
+Sell Trade
+
 </label>
 
-<input type="number" id="target" placeholder="Example: 520">
+</div>
+
+
+
+<div class="input-grid">
+
+
+<div>
+
+<label>Trading Capital (₹)</label>
+
+<input
+type="number"
+id="capital"
+placeholder="100000">
 
 </div>
 
 
 
+<div>
+
+<label>Risk Per Trade (%)</label>
+
+<input
+type="number"
+id="riskPercent"
+placeholder="2">
+
 </div>
 
 
-<button class="btn btn-primary" onclick="calculateRR()">
+
+<div>
+
+<label>Entry Price</label>
+
+<input
+type="number"
+id="entry"
+placeholder="500">
+
+</div>
+
+
+
+<div>
+
+<label>Stop Loss</label>
+
+<input
+type="number"
+id="stopLoss"
+placeholder="490">
+
+</div>
+
+
+
+<div>
+
+<label>Target Price</label>
+
+<input
+type="number"
+id="target"
+placeholder="530">
+
+</div>
+
+</div>
+
+
+
+<button
+class="calculate-btn"
+onclick="calculateTrade()">
 
 <i class="fa-solid fa-chart-line"></i>
-Calculate
+
+Calculate Trade
 
 </button>
 
 
 
+<!-- RESULT -->
+
 <div class="result-box">
 
-
 <h3>
-Result
+
+Trade Result
+
 </h3>
 
 
-<p>
-Risk:
-<span id="risk">0</span>
+<p id="riskAmount">
+
+Risk Amount : ₹0
+
 </p>
 
 
-<p>
-Reward:
-<span id="reward">0</span>
+<p id="rewardAmount">
+
+Reward Amount : ₹0
+
 </p>
 
 
-<p>
-Risk Reward Ratio:
-<span id="ratio">0</span>
+<p id="ratio">
+
+Risk Reward Ratio : 0
+
 </p>
 
+
+<p id="quantity">
+
+Maximum Quantity : 0
+
+</p>
+
+
+<p id="winRate">
+
+Required Win Rate : 0%
+
+</p>
+
+
+<p id="rating">
+
+Trade Rating :
+
+--
+
+</p>
 
 </div>
 
-
-
-</section>
-
-  <section class="calculator-info">
-
-<h2>
-<i class="fa-solid fa-circle-info"></i>
-Risk Reward Calculator Kya Hai?
-</h2>
-
-
-<p>
-Risk Reward Calculator ek trading tool hai jo trader ko trade lene se pehle ye samajhne mein help karta hai ki wo kitna risk le raha hai aur uske badle potential reward kitna ho sakta hai.
-</p>
-
-
-<p>
-Professional traders aksar trade enter karne se pehle apna entry price, stop loss aur target decide karte hain taaki risk ko control kiya ja sake.
-</p>
-
-
-
-<h3>
-Risk Reward Ratio kya hota hai?
-</h3>
-
-
-<p>
-Risk Reward Ratio batata hai ki ek trade mein possible loss ke comparison mein expected profit kitna hai.
-</p>
-
-
-<p>
-Example:
-Agar aap kisi trade mein ₹10 ka risk le rahe hain aur possible reward ₹20 hai, to Risk Reward Ratio 1:2 hoga.
-</p>
-
-
-</section>
-
-
-
+</div>
+<!-- ================= FORMULA ================= -->
 
 <section class="calculator-info">
 
+<h2>
+<i class="fa-solid fa-square-root-variable"></i>
+Risk Reward Formula
+</h2>
+
+<div class="formula-box">
+
+<p><strong>Risk Per Share</strong> = Entry Price − Stop Loss</p>
+
+<p><strong>Reward Per Share</strong> = Target Price − Entry Price</p>
+
+<p><strong>Risk Reward Ratio</strong> = Reward ÷ Risk</p>
+
+<p><strong>Position Size</strong> = Risk Amount ÷ Risk Per Share</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= HOW TO USE ================= -->
+
+<section class="calculator-info">
 
 <h2>
 <i class="fa-solid fa-list-check"></i>
-Calculator Kaise Use Kare?
+How To Use This Calculator
 </h2>
 
-
 <div class="step-box">
 
-
-<h3>
-Step 1 — Entry Price Dale
-</h3>
+<h3>Step 1</h3>
 
 <p>
-Jis price par aap trade enter karna chahte hain, wo entry price box mein dale.
+Enter your total trading capital.
 </p>
-
 
 </div>
 
-
-
 <div class="step-box">
 
-
-<h3>
-Step 2 — Stop Loss Dale
-</h3>
+<h3>Step 2</h3>
 
 <p>
-Wo price dale jahan aap maximum loss ko limit karna chahte hain.
+Enter the percentage of capital you are willing to risk.
 </p>
-
 
 </div>
 
-
-
 <div class="step-box">
 
-
-<h3>
-Step 3 — Target Price Dale
-</h3>
+<h3>Step 3</h3>
 
 <p>
-Apna expected profit target enter kare aur Calculate button press kare.
+Enter Entry Price, Stop Loss and Target Price.
 </p>
-
 
 </div>
 
+<div class="step-box">
+
+<h3>Step 4</h3>
+
+<p>
+Click Calculate Trade to view Position Size, Risk, Reward and Ratio.
+</p>
+
+</div>
 
 </section>
 
 
 
+<!-- ================= EXAMPLE ================= -->
 
 <section class="calculator-info">
-
 
 <h2>
 <i class="fa-solid fa-lightbulb"></i>
-Example
+Example Calculation
 </h2>
 
+<table class="info-table">
+
+<tr>
+
+<th>Capital</th>
+
+<td>₹100000</td>
+
+</tr>
+
+<tr>
+
+<th>Risk %</th>
+
+<td>2%</td>
+
+</tr>
+
+<tr>
+
+<th>Entry</th>
+
+<td>₹500</td>
+
+</tr>
+
+<tr>
+
+<th>Stop Loss</th>
+
+<td>₹490</td>
+
+</tr>
+
+<tr>
+
+<th>Target</th>
+
+<td>₹530</td>
+
+</tr>
+
+</table>
 
 <p>
-Maan lijiye:
+
+Risk Amount = ₹2000
+
 </p>
-
-
-<ul>
-
-<li>Entry Price = ₹500</li>
-
-<li>Stop Loss = ₹490</li>
-
-<li>Target Price = ₹520</li>
-
-</ul>
-
 
 <p>
-Is trade mein risk ₹10 hai aur reward ₹20 hai.
-Isliye Risk Reward Ratio 1:2 hoga.
+
+Risk Per Share = ₹10
+
 </p>
 
+<p>
+
+Maximum Quantity = 200 Shares
+
+</p>
+
+<p>
+
+Potential Reward = ₹6000
+
+</p>
+
+<p>
+
+Risk Reward Ratio = 1 : 3
+
+</p>
 
 </section>
 
-  <section class="calculator-info">
 
 
-<h2>
-<i class="fa-solid fa-triangle-exclamation"></i>
-Common Trading Mistakes
-</h2>
-
-
-<ul>
-
-<li>
-Trade lene se pehle risk calculate na karna.
-</li>
-
-<li>
-Bina Stop Loss ke trading karna.
-</li>
-
-<li>
-Sirf profit ke baare mein sochna aur risk ignore karna.
-</li>
-
-<li>
-Ek hi trade mein bahut zyada capital lagana.
-</li>
-
-<li>
-Emotion mein aakar trading decisions lena.
-</li>
-
-</ul>
-
-
-</section>
-
-
-
-
+<!-- ================= RATING ================= -->
 
 <section class="calculator-info">
 
-
 <h2>
+
 <i class="fa-solid fa-star"></i>
-Risk Management Tips
-</h2>
 
+How To Read Risk Reward Ratio
+
+</h2>
 
 <ul>
 
-<li>
-Har trade se pehle Entry, Stop Loss aur Target decide kare.
-</li>
+<li><strong>1 : 1</strong> → Poor Trade</li>
 
-<li>
-Risk Reward Ratio ko samajhkar trade plan banaye.
-</li>
+<li><strong>1 : 1.5</strong> → Average Trade</li>
 
-<li>
-Apne trading capital ko protect karna priority rakhe.
-</li>
+<li><strong>1 : 2</strong> → Good Trade</li>
 
-<li>
-Trading journal maintain kare aur mistakes se seekhe.
-</li>
+<li><strong>1 : 3+</strong> → Excellent Trade</li>
 
 </ul>
 
-
 </section>
 
 
 
-
+<!-- ================= TIPS ================= -->
 
 <section class="calculator-info">
 
-
 <h2>
-<i class="fa-solid fa-circle-question"></i>
-Frequently Asked Questions
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Professional Risk Management Tips
+
 </h2>
 
+<ul>
 
+<li>Never trade without a Stop Loss.</li>
 
-<h3>
-1. Risk Reward Ratio kya hota hai?
-</h3>
+<li>Risk only 1–2% of your capital per trade.</li>
 
-<p>
-Risk Reward Ratio possible loss aur possible profit ke beech ka comparison hota hai.
-</p>
+<li>Maintain a minimum Risk Reward Ratio of 1:2.</li>
 
+<li>Do not increase quantity after taking losses.</li>
 
+<li>Follow your trading plan with discipline.</li>
 
-<h3>
-2. Kya high Risk Reward Ratio hamesha better hota hai?
-</h3>
-
-<p>
-Nahi. Ratio ke saath trading strategy, accuracy aur risk management bhi important hote hain.
-</p>
-
-
-
-<h3>
-3. Kya ye calculator buy ya sell signal deta hai?
-</h3>
-
-<p>
-Nahi. Ye sirf risk aur reward calculate karne mein help karta hai. Ye koi trading recommendation nahi deta.
-</p>
-
-
-
-<h3>
-4. Beginners ke liye Risk Reward Calculator useful hai?
-</h3>
-
-<p>
-Haan, beginners ko trade lene se pehle apna risk samajhne mein help mil sakti hai.
-</p>
-
+</ul>
 
 </section>
 
 
 
+<!-- ================= MISTAKES ================= -->
 
+<section class="calculator-info">
+
+<h2>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Common Trading Mistakes
+
+</h2>
+
+<ul>
+
+<li>Ignoring Stop Loss.</li>
+
+<li>Taking random entries.</li>
+
+<li>Overtrading.</li>
+
+<li>Using excessive leverage.</li>
+
+<li>Trading based on emotions.</li>
+
+<li>Ignoring Risk Reward Ratio.</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="calculator-info">
+
+<h2>
+
+<i class="fa-solid fa-circle-question"></i>
+
+Frequently Asked Questions
+
+</h2>
+
+<h3>
+
+What is a good Risk Reward Ratio?
+
+</h3>
+
+<p>
+
+Most professional traders prefer at least a 1:2 Risk Reward Ratio.
+
+</p>
+
+
+
+<h3>
+
+Can beginners use this calculator?
+
+</h3>
+
+<p>
+
+Yes. It helps beginners understand proper position sizing and risk management.
+
+</p>
+
+
+
+<h3>
+
+Does this calculator provide Buy or Sell signals?
+
+</h3>
+
+<p>
+
+No. It only performs mathematical calculations for educational purposes.
+
+</p>
+
+
+
+<h3>
+
+Why is Position Size important?
+
+</h3>
+
+<p>
+
+Position sizing helps control losses and protects trading capital over the long term.
+
+</p>
+
+</section>
+
+
+
+<!-- ================= DISCLAIMER ================= -->
 
 <section class="calculator-info disclaimer-box">
 
-
 <h2>
-<i class="fa-solid fa-shield-halved"></i>
+
+<i class="fa-solid fa-scale-balanced"></i>
+
 Disclaimer
+
 </h2>
 
-
 <p>
-Ye calculator sirf educational purpose ke liye banaya gaya hai. Stock market trading mein risk hota hai. Koi bhi trade lene se pehle apni research aur risk management zaroor kare.
+
+This calculator is provided for educational purposes only. Trading and investing involve market risk. Always perform your own research before making any financial decisions.
+
 </p>
 
-
 </section>
-
-
 
 
 
@@ -457,20 +638,17 @@ Ye calculator sirf educational purpose ke liye banaya gaya hai. Stock market tra
 
 <i class="fa-solid fa-arrow-left"></i>
 
-Back to Home
+Back To Home
 
 </a>
 
 </div>
 
-
 </div>
 
 </main>
 
-
-<script src="script.js"></script>
-
+<script src="calculator.js"></script>
 
 </body>
 
