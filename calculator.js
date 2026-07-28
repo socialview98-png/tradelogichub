@@ -108,3 +108,35 @@ function calculateTrade() {
 
     ratingBox.style.color = color;
 }
+
+let quality = "";
+let riskLevel = "";
+let rewardLevel = "";
+let suggestion = "";
+
+if (ratio >= 3) {
+
+    quality = "Excellent Trade";
+    riskLevel = "Low";
+    rewardLevel = "High";
+    suggestion = "Trade setup looks strong if your strategy also confirms the entry.";
+
+} else if (ratio >= 2) {
+
+    quality = "Good Trade";
+    riskLevel = "Moderate";
+    rewardLevel = "Good";
+    suggestion = "Good risk-reward. Wait for confirmation before entering.";
+
+} else {
+
+    quality = "Weak Trade";
+    riskLevel = "High";
+    rewardLevel = "Low";
+    suggestion = "Avoid this setup or improve the target/stop loss.";
+}
+
+document.getElementById("analysisQuality").textContent = quality;
+document.getElementById("analysisRisk").textContent = riskLevel;
+document.getElementById("analysisReward").textContent = rewardLevel;
+document.getElementById("analysisSuggestion").textContent = suggestion;
