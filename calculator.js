@@ -1,19 +1,21 @@
-// ===== Premium Risk Reward Calculator =====
+// =====================================
+// TradeLogicHub Premium Risk Reward Calculator
+// =====================================
 
 
 function calculateRiskReward(){
 
 
-    let entry = Number(document.getElementById("entryPrice").value);
-    let stop = Number(document.getElementById("stopLoss").value);
-    let target = Number(document.getElementById("targetPrice").value);
-    let quantity = Number(document.getElementById("quantity").value);
+    const entry = Number(document.getElementById("entryPrice").value);
+    const stop = Number(document.getElementById("stopLoss").value);
+    const target = Number(document.getElementById("targetPrice").value);
+    const quantity = Number(document.getElementById("quantity").value);
 
 
 
-    if(!entry || !stop || !target || !quantity){
+    if(entry <= 0 || stop <= 0 || target <= 0 || quantity <= 0){
 
-        alert("Please fill all fields");
+        alert("Please enter valid trade details");
 
         return;
 
@@ -21,7 +23,7 @@ function calculateRiskReward(){
 
 
 
-    // Risk & Reward per share
+    // Calculate per share risk & reward
 
     let riskPerShare = Math.abs(entry - stop);
 
@@ -29,7 +31,7 @@ function calculateRiskReward(){
 
 
 
-    // Total amount
+    // Total trade amount
 
     let totalRisk = riskPerShare * quantity;
 
@@ -43,25 +45,24 @@ function calculateRiskReward(){
 
 
 
-    let rrText = "1:" + ratio.toFixed(2);
-
-
 
     // Display Results
 
 
     document.getElementById("riskAmount").innerHTML =
-    "$" + totalRisk.toFixed(2);
+    "₹" + totalRisk.toFixed(2);
 
 
 
     document.getElementById("rewardAmount").innerHTML =
-    "$" + totalReward.toFixed(2);
+    "₹" + totalReward.toFixed(2);
 
 
 
     document.getElementById("rrRatio").innerHTML =
-    rrText;
+    "1 : " + ratio.toFixed(2);
+
+
 
 
 
@@ -71,27 +72,51 @@ function calculateRiskReward(){
     let status = document.getElementById("tradeStatus");
 
 
+
     if(ratio < 1){
+
 
         status.innerHTML = "Poor";
 
-        status.style.color = "red";
+
+        status.style.color = "#dc2626";
+
 
     }
+
 
     else if(ratio >= 1 && ratio < 2){
 
+
         status.innerHTML = "Average";
 
-        status.style.color = "orange";
+
+        status.style.color = "#f59e0b";
+
 
     }
 
-    else if(ratio >= 2){
+
+    else if(ratio >= 2 && ratio < 3){
+
+
+        status.innerHTML = "Good";
+
+
+        status.style.color = "#2563eb";
+
+
+    }
+
+
+    else{
+
 
         status.innerHTML = "Excellent";
 
-        status.style.color = "green";
+
+        status.style.color = "#16a34a";
+
 
     }
 
