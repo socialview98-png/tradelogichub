@@ -6,16 +6,16 @@
 function calculateRiskReward(){
 
 
-    const entry = Number(document.getElementById("entryPrice").value);
-    const stop = Number(document.getElementById("stopLoss").value);
-    const target = Number(document.getElementById("targetPrice").value);
-    const quantity = Number(document.getElementById("quantity").value);
+    let entry = Number(document.getElementById("entryPrice").value);
+    let stop = Number(document.getElementById("stopLoss").value);
+    let target = Number(document.getElementById("targetPrice").value);
+    let quantity = Number(document.getElementById("quantity").value);
 
 
 
     if(entry <= 0 || stop <= 0 || target <= 0 || quantity <= 0){
 
-        alert("Please enter valid trade details");
+        alert("Please enter all trade details");
 
         return;
 
@@ -23,15 +23,13 @@ function calculateRiskReward(){
 
 
 
-    // Calculate per share risk & reward
+    // Calculate Risk & Reward
 
     let riskPerShare = Math.abs(entry - stop);
 
     let rewardPerShare = Math.abs(target - entry);
 
 
-
-    // Total trade amount
 
     let totalRisk = riskPerShare * quantity;
 
@@ -45,8 +43,7 @@ function calculateRiskReward(){
 
 
 
-
-    // Display Results
+    // Display Result
 
 
     document.getElementById("riskAmount").innerHTML =
@@ -66,6 +63,7 @@ function calculateRiskReward(){
 
 
 
+
     // Trade Quality
 
 
@@ -75,48 +73,36 @@ function calculateRiskReward(){
 
     if(ratio < 1){
 
-
         status.innerHTML = "Poor";
 
-
         status.style.color = "#dc2626";
-
 
     }
 
 
     else if(ratio >= 1 && ratio < 2){
 
-
         status.innerHTML = "Average";
 
-
         status.style.color = "#f59e0b";
-
 
     }
 
 
     else if(ratio >= 2 && ratio < 3){
 
-
         status.innerHTML = "Good";
 
-
         status.style.color = "#2563eb";
-
 
     }
 
 
     else{
 
-
         status.innerHTML = "Excellent";
 
-
         status.style.color = "#16a34a";
-
 
     }
 
