@@ -8,6 +8,8 @@
 
 <title>Risk Reward Calculator | TradeLogicHub</title>
 
+<meta name="description" content="Free Risk Reward Calculator to calculate trading risk, reward ratio and manage trades with better planning.">
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="calculator.css">
 
@@ -22,7 +24,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <!-- Header -->
 
-<header class="main-header">
+<header class="calculator-header">
 
 <div class="logo">
 TradeLogicHub
@@ -30,31 +32,36 @@ TradeLogicHub
 
 
 <nav>
+
 <a href="index.html">Home</a>
-<a href="articles.html">Articles</a>
-<a href="tools.html">Tools</a>
+
+<a href="index.html#articles">Articles</a>
+
+<a href="index.html#tools">Tools</a>
+
 </nav>
+
 
 </header>
 
 
 
 
-<!-- Hero -->
+
+<!-- Hero Section -->
 
 <section class="calculator-hero">
 
-<div class="hero-content">
 
 <h1>
-Risk Reward Calculator
+Premium Risk Reward Calculator
 </h1>
 
+
 <p>
-Plan your trades with logic, manage risk and improve your trading decisions.
+Master your trades with proper risk management and logical planning.
 </p>
 
-</div>
 
 </section>
 
@@ -62,68 +69,65 @@ Plan your trades with logic, manage risk and improve your trading decisions.
 
 
 
+
+
 <!-- Calculator -->
 
-<section class="calculator-section">
+<section class="calculator-wrapper">
 
 
-<div class="premium-calculator-card">
+<div class="calculator-card">
 
 
-<div class="tool-heading">
+<div class="tool-title">
 
 <i class="fa-solid fa-chart-line"></i>
 
 <div>
-<h2>Trade Setup Calculator</h2>
-<p>Calculate risk, reward and trade quality</p>
-</div>
+
+<h2>
+Trade Risk Analyzer
+</h2>
+
+<p>
+Calculate your potential risk and reward before entering a trade.
+</p>
 
 </div>
 
+</div>
 
 
 
 
-<div class="input-grid">
+
+<div class="calculator-inputs">
 
 
-<div class="input-group">
-
+<div>
 <label>Entry Price</label>
-
-<input type="number" id="entryPrice" placeholder="Example: 100">
-
+<input id="entryPrice" type="number" placeholder="Enter price">
 </div>
 
 
 
-<div class="input-group">
-
+<div>
 <label>Stop Loss</label>
-
-<input type="number" id="stopLoss" placeholder="Example: 95">
-
+<input id="stopLoss" type="number" placeholder="Enter stop loss">
 </div>
 
 
 
-<div class="input-group">
-
+<div>
 <label>Target Price</label>
-
-<input type="number" id="targetPrice" placeholder="Example: 115">
-
+<input id="targetPrice" type="number" placeholder="Enter target">
 </div>
 
 
 
-<div class="input-group">
-
+<div>
 <label>Quantity</label>
-
-<input type="number" id="quantity" placeholder="Example: 10">
-
+<input id="quantity" type="number" placeholder="Number of shares">
 </div>
 
 
@@ -132,10 +136,11 @@ Plan your trades with logic, manage risk and improve your trading decisions.
 
 
 
-<button class="calculate-btn" onclick="calculateRiskReward()">
+
+<button onclick="calculateRiskReward()">
 
 <i class="fa-solid fa-calculator"></i>
-Calculate Risk Reward
+Calculate
 
 </button>
 
@@ -144,67 +149,99 @@ Calculate Risk Reward
 
 
 
-<div class="results-dashboard">
+<div class="result-section">
 
 
-<div class="result-card risk">
-
-<i class="fa-solid fa-triangle-exclamation"></i>
-
+<div>
 <h3>Total Risk</h3>
-
-<strong id="riskAmount">$0</strong>
-
+<span id="riskAmount">$0</span>
 </div>
 
 
-
-
-<div class="result-card reward">
-
-<i class="fa-solid fa-arrow-trend-up"></i>
-
+<div>
 <h3>Total Reward</h3>
-
-<strong id="rewardAmount">$0</strong>
-
+<span id="rewardAmount">$0</span>
 </div>
 
 
-
-
-<div class="result-card ratio">
-
-<i class="fa-solid fa-scale-balanced"></i>
-
-<h3>Risk Reward</h3>
-
-<strong id="rrRatio">1:0</strong>
-
+<div>
+<h3>Risk Reward Ratio</h3>
+<span id="rrRatio">1:0</span>
 </div>
 
 
-
-
-<div class="result-card status">
-
-<i class="fa-solid fa-star"></i>
-
+<div>
 <h3>Trade Quality</h3>
-
-<strong id="tradeStatus">Waiting</strong>
-
+<span id="tradeStatus">Waiting</span>
 </div>
 
 
 </div>
-
 
 
 </div>
 
 
 </section>
+
+
+
+
+
+
+
+<!-- Education -->
+
+<section class="info-section">
+
+
+<h2>How To Use Risk Reward Calculator?</h2>
+
+
+<p>
+Enter your entry price, stop loss price, target price and quantity.
+The calculator will show your possible risk, reward and risk reward ratio.
+</p>
+
+
+
+<h2>Why Risk Reward Ratio Matters?</h2>
+
+
+<p>
+A good risk reward ratio helps traders control losses and plan trades with discipline instead of emotions.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Disclaimer -->
+
+<section class="disclaimer">
+
+
+<h2>Trading Disclaimer</h2>
+
+
+<p>
+
+TradeLogicHub provides educational tools and information only.
+This Risk Reward Calculator is designed for learning and trade planning purposes.
+It does not provide financial advice, investment recommendations, or guaranteed profit results.
+
+Trading and investing involve risk. Always do your own research and consider your financial situation before making any trading decision.
+
+</p>
+
+
+</section>
+
 
 
 
@@ -221,6 +258,8 @@ Calculate Risk Reward
 
 
 
+
+<script src="script.js"></script>
 <script src="calculator.js"></script>
 
 
