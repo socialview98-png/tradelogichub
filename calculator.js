@@ -4,7 +4,7 @@ function calculateTrade(){
   let riskPercent = Number(document.getElementById("riskPercent").value);
 
   let entry = Number(document.getElementById("entry").value);
-  let stopLoss = Number(document.getElementById("stopLoss").value);
+  let stoploss = Number(document.getElementById("stopLoss").value);
   let target = Number(document.getElementById("target").value);
 
 
