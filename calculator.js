@@ -59,7 +59,38 @@ function calculateRiskReward(){
     document.getElementById("rrRatio").innerHTML =
     "1 : " + ratio.toFixed(2);
 
+// Risk Reward Meter Update
 
+let maxValue = Math.max(totalRisk, totalReward);
+
+
+let riskWidth = (totalRisk / maxValue) * 100;
+
+let rewardWidth = (totalReward / maxValue) * 100;
+
+
+
+document.getElementById("riskBar").style.width =
+riskWidth + "%";
+
+
+document.getElementById("rewardBar").style.width =
+rewardWidth + "%";
+
+
+
+document.getElementById("riskMeterValue").innerHTML =
+"₹" + totalRisk.toFixed(2);
+
+
+
+document.getElementById("rewardMeterValue").innerHTML =
+"₹" + totalReward.toFixed(2);
+
+
+
+document.getElementById("meterRatio").innerHTML =
+"1 : " + ratio.toFixed(2);
 
 
 
