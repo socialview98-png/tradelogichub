@@ -23,7 +23,7 @@ let entry = Number(document.getElementById("entry").value);
 
 let stoploss = Number(document.getElementById("stoploss").value);
 
-let target = Number(document.getElementById("target").value");
+let target = Number(document.getElementById("target").value);
 
 
 if(!entry || !stoploss || !target){
